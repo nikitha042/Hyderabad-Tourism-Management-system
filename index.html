@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Explore Hyderabad</title>
+
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+</head>
+
+
+<body>
+
+
+<header>
+<h1>Explore Hyderabad</h1>
+<p>History | Culture | Food | Tourism</p>
+</header>
+
+
+<nav>
+
+<a href="/">Home</a>
+<a href="#about">About</a>
+<a href="#places">Places</a>
+<a href="#food">Food</a>
+<a href="/gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="/login">Admin Login</a>
+
+</nav>
+
+
+
+<section class="hero">
+
+<h1>Welcome to Hyderabad</h1>
+
+<p>Discover the City of Pearls</p>
+
+</section>
+
+
+
+
+<section class="search-section">
+
+<h2>Search Places and Food</h2>
+
+<input id="searchBox"
+type="text"
+placeholder="Search here..."
+onkeyup="searchItems()">
+
+</section>
+
+
+
+
+
+<section id="about" class="about">
+
+<h2>About Hyderabad</h2>
+
+<p>
+Hyderabad is famous for historical monuments,
+Nizami culture, IT industry and delicious food.
+</p>
+
+</section>
+
+
+
+
+
+<section id="places">
+
+<h2>Tourist Places</h2>
+
+
+<div class="container">
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/charminar.jpg')}}">
+<h3>Charminar</h3>
+<p>Historic monument.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/golconda.jpg')}}">
+<h3>Golconda Fort</h3>
+<p>Ancient fort.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/hussainsagar.jpg')}}">
+<h3>Hussain Sagar</h3>
+<p>Beautiful lake.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/birlamandir.jpg')}}">
+<h3>Birla Mandir</h3>
+<p>Temple.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/chowmahalla.jpg')}}">
+<h3>Chowmahalla Palace</h3>
+<p>Royal palace.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/ramoji.webp')}}">
+<h3>Ramoji Film City</h3>
+<p>Film studio.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/salarjung.webp')}}">
+<h3>Salar Jung Museum</h3>
+<p>Historical museum.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/swarnagiri.webp')}}">
+<h3>Swarnagiri</h3>
+<p>Temple.</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="food">
+
+<h2>Hyderabadi Foods</h2>
+
+
+<div class="container">
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/biryani.jpg')}}">
+<h3>Biryani</h3>
+<p>Famous Hyderabad food.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/haleem.jpg')}}">
+<h3>Haleem</h3>
+<p>Traditional dish.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/qubani.jpg')}}">
+<h3>Qubani</h3>
+<p>Sweet dessert.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/chicken65.jpg')}}">
+<h3>Chicken 65</h3>
+<p>Spicy chicken.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/marag.jpg')}}">
+<h3>Marag</h3>
+<p>Mutton soup.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/seekhkebab.jpg')}}">
+<h3>Seekh Kebab</h3>
+<p>Kebab dish.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/iranichai.avif')}}">
+<h3>Irani Chai</h3>
+<p>Famous tea.</p>
+</div>
+
+
+<div class="card item">
+<img src="{{url_for('static',filename='images/osmania.webp')}}">
+<h3>Osmania Biscuit</h3>
+<p>Bakery item.</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+
+<form action="/contact" method="POST">
+
+<input name="name" placeholder="Name">
+
+<input name="email" placeholder="Email">
+
+<textarea name="message" placeholder="Message"></textarea>
+
+<button>Submit</button>
+
+</form>
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>© 2026 Explore Hyderabad</p>
+
+</footer>
+
+
+
+
+
+<script>
+
+function searchItems(){
+
+let input=document.getElementById("searchBox").value.toLowerCase();
+
+let cards=document.querySelectorAll(".item");
+
+
+cards.forEach(function(card){
+
+let text=card.innerText.toLowerCase();
+
+
+if(text.includes(input))
+{
+card.style.display="block";
+}
+else
+{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
+
+</body>
+
+</html>

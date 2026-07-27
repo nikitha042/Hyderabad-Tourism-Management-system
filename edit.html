@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Edit Message</title>
+</head>
+
+<body>
+
+<h2>Edit Message</h2>
+
+<form action="/update/{{message[0]}}" method="POST">
+
+<input name="name" value="{{message[1]}}">
+
+<br><br>
+
+<input name="email" value="{{message[2]}}">
+
+<br><br>
+
+<textarea name="message">{{message[3]}}</textarea>
+
+<br><br>
+
+<button type="submit">Update</button>
+
+</form>
+
+</body>
+
+</html>
